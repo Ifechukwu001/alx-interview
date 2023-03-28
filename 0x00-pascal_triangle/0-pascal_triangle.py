@@ -3,6 +3,7 @@
 
 """
 
+
 def _pascal_helper(array, current, stop):
     """ Recursive pascal helper
 
@@ -24,13 +25,13 @@ def _pascal_helper(array, current, stop):
         last_arr = array[-1]
         last_len = len(last_arr)
         curr_arr = []
-        i = 0;
-        j = 1;
+        i = 0
+        j = 1
         curr_arr.append(1)
         while j < last_len:
             tmp = last_arr[i] + last_arr[j]
             i = j
-            j+=1
+            j += 1
             curr_arr.append(tmp)
         curr_arr.append(1)
 
@@ -39,7 +40,7 @@ def _pascal_helper(array, current, stop):
         return
     else:
         return _pascal_helper(array, current + 1, stop)
-            
+
 
 def pascal_triangle(n):
     """ Pascal triangle generator
@@ -55,5 +56,5 @@ def pascal_triangle(n):
         return []
     else:
         arr = []
-        _pascal_helper(arr, 1, n);
+        _pascal_helper(arr, 1, n)
         return arr
