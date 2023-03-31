@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-"""Module containing the algorithm for lockboxes
+"""Module containing the algorithm for lockboxes.
 
+The Algorithm has a time complexity of O(n)
 """
 
 
