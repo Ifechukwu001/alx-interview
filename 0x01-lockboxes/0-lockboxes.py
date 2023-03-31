@@ -16,7 +16,6 @@ def openBox(boxes: list[list[int]], box: int, key_list: list[int]) -> bool:
     Returns:
         bool: True if opened , False otherwise
     """
-
     if box in key_list:
         key_list.extend(boxes[box])
         return True
@@ -32,7 +31,6 @@ def canUnlockAll(boxes: list[list[int]]) -> bool:
     Returns:
         bool: True if possible, False otherwise.
     """
-
     opened_list: list[int] = []
     closed_list: list[int] = []
     key_list: list[int] = [0]
