@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """Module containing the algorithm for lockboxes.
-
-The Algorithm has a time complexity of O(n)
+The Algorithm has a time complexity of O(n).
 """
 
 
 def canUnlockAll(boxes: list[list[int]]) -> bool:
-    """Can Unlock All
+    """Can Unlock All: Checks if the boxes can all be opened.
+    The function works you can test it on the main_0.py file.
 
     Args:
         boxes (list of list of int): Box list.
