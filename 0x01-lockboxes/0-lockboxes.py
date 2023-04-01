@@ -7,7 +7,7 @@ The Algorithm has a time complexity of O(n)
 
 def openBox(boxes: list[list[int]], box: int, key_list: list[int]) -> bool:
     """Opens a box
-    
+
     Args:
         boxes (list of list of int): Box list.
         box (int): Box number.
@@ -24,10 +24,10 @@ def openBox(boxes: list[list[int]], box: int, key_list: list[int]) -> bool:
 
 def canUnlockAll(boxes: list[list[int]]) -> bool:
     """Can Unlock All
-    
+
     Args:
         boxes (list of list of int): Box list.
-        
+
     Returns:
         bool: True if possible, False otherwise.
     """
