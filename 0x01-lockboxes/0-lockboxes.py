@@ -2,9 +2,10 @@
 """Module containing the algorithm for lockboxes.
 The Algorithm has a time complexity of O(n).
 """
+import typing
 
 
-def canUnlockAll(boxes: list[list[int]]) -> bool:
+def canUnlockAll(boxes: typing.List[typing.List[int]]) -> bool:
     """Can Unlock All: Checks if the boxes can all be opened.
     The function works you can test it on the main_0.py file.
 
