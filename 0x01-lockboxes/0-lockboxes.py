@@ -9,7 +9,7 @@ Write a method that determines if all the boxes can be opened.
 import typing
 
 
-def canUnlockAll(boxes: typing.List[typing.List[int]]) -> bool:
+def canUnlockAll(boxes):
     """Can Unlock All: Checks if the boxes can all be opened.
     The function works you can test it on the main_0.py file.
 
