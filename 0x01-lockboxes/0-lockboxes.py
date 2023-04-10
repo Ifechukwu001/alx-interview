@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """Module containing the algorithm for lockboxes.
 
 You have n number of locked boxes in front of you. 
