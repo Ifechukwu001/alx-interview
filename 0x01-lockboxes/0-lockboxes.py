@@ -19,9 +19,9 @@ def canUnlockAll(boxes):
     Returns:
         bool: True if possible, False otherwise.
     """
-    opened_list: list[int] = []
-    closed_list: list[int] = []
-    key_list: list[int] = [0]
+    opened_list = []
+    closed_list = []
+    key_list = [0]
     boxes_len = len(boxes)
 
     for box in range(boxes_len):
