@@ -21,7 +21,6 @@ def sigint_handler(signum, frame):
         frame: ?
     """
     global breakout
-    print_details()
     breakout = True
 
 
@@ -38,6 +37,8 @@ def print_details():
 
 
 for line in sys.stdin:
+    if breakout:
+        break
     data = re.fullmatch(r'\d+\.\d+\.\d+\.\d+ - \[\d{4}-\d{2}-\d{2} '
                         r'(?:\d{2}:){2}\d{2}\.\d+\] "GET /projects/260 '
                         r'HTTP/1.1" (?P<code>\d{3}) (?P<size>\d+)',
@@ -54,5 +55,4 @@ for line in sys.stdin:
     iteration += 1
     if iteration and iteration % 10 == 0:
         print_details()
-    if breakout:
-        print_details()
+print_details()
