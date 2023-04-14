@@ -39,7 +39,7 @@ def print_details():
 for line in sys.stdin:
     if breakout:
         break
-    data = re.fullmatch(r'\d+\.\d+\.\d+\.\d+ - \[\d{4}-\d{2}-\d{2} '
+    data = re.fullmatch(r'.+ ?- ?\[\d{4}-\d{2}-\d{2} '
                         r'(?:\d{2}:){2}\d{2}\.\d+\] "GET /projects/260 '
                         r'HTTP/1.1" (?P<code>\d{3}) (?P<size>\d+)',
                         line.rstrip()
