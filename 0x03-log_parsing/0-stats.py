@@ -11,7 +11,6 @@ breakout = False
 iteration = 0
 total_size = 0
 status_codes = {}
-sample = r'\d+\.\d+\.\d+\.\d+ - \[\d{4}-\d{2}-\d{2} (?:\d{2}:){2}\d{2}\.\d+\] "GET /projects/260 HTTP/1.1" (?P<code>\d{3}) (?P<size>\d+)'
 
 
 def sigint_handler(signum, frame):
@@ -25,6 +24,7 @@ def sigint_handler(signum, frame):
     print_details()
     breakout = True
 
+
 signal.signal(signal.SIGINT, sigint_handler)
 
 
@@ -37,9 +37,12 @@ def print_details():
         print("{}: {}".format(key, status_codes[key]))
 
 
-
 for line in sys.stdin:
-    data = re.fullmatch(sample, line.rstrip())
+    data = re.fullmatch(r'\d+\.\d+\.\d+\.\d+ - \[\d{4}-\d{2}-\d{2} '
+                        r'(?:\d{2}:){2}\d{2}\.\d+\] "GET /projects/260 '
+                        r'HTTP/1.1" (?P<code>\d{3}) (?P<size>\d+)',
+                        line.rstrip()
+                        )
     if data:
         data = data.groupdict()
         total_size += int(data.get("size"))
