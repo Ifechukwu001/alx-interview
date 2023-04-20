@@ -41,7 +41,9 @@ def validUTF8(data):
     byte = 0
     result = True
 
-    while type(data) == list and byte < len(data):
+    if type(data) != list and byte == len(data):
+        return False
+    while byte < len(data):
         rep = bin(data[byte]).split("b")[1]
         if len(rep) <= 7:
             byte += 1
