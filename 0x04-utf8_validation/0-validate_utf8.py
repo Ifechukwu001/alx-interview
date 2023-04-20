@@ -5,7 +5,7 @@
 """
 HEAD2_BYTE = "110"
 HEAD3_BYTE = "1110"
-HEAD4_BYTE = "1111"
+HEAD4_BYTE = "11110"
 CONT_BYTE = "10"
 
 
@@ -19,8 +19,10 @@ def check_char(code_list, current, result, no_2_check):
         no_2_check (int): Number of bytes to check next.
     """
     if no_2_check:
+        if current >= len(code_list):
+            return False
         rep = bin(code_list[current]).split("b")[1]
-        if len(rep) < 8 or rep[:2] != CONT_BYTE:
+        if len(rep) != 8 or rep[:2] != CONT_BYTE:
             result = False
         return check_char(code_list, current + 1, result, no_2_check - 1)
     else:
@@ -50,9 +52,13 @@ def validUTF8(data):
             elif rep[:4] == HEAD3_BYTE:
                 result = check_char(data, byte + 1, result, 2)
                 byte += 3
-            elif rep[:4] == HEAD4_BYTE:
+            elif rep[:5] == HEAD4_BYTE:
                 result = check_char(data, byte + 1, result, 3)
                 byte += 4
+            else:
+                result = False
+        else:
+            result = False
         if not result:
             break
     return result
