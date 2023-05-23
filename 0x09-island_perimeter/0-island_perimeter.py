@@ -26,5 +26,6 @@ def island_perimeter(grid):
                 if grid[len_count + 1][idx] < col:
                     perimeter += 1
             prev_box = col
+        prev_box = 0
         len_count += 1
     return perimeter
