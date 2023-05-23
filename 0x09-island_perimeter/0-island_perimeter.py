@@ -19,10 +19,12 @@ def island_perimeter(grid):
                 perimeter += 1
             if col < prev_box:
                 perimeter += 1
-            if len_count and grid[len_count - 1][idx] < col:
-                perimeter += 1
-            if len_count < grid_length - 1 and grid[len_count + 1][idx] < col:
-                perimeter += 1
+            if len_count and idx < len(grid[len_count - 1]):
+                if grid[len_count - 1][idx] < col:
+                    perimeter += 1
+            if len_count < grid_length - 1 and idx < len(grid[len_count + 1]):
+                if grid[len_count + 1][idx] < col:
+                    perimeter += 1
             prev_box = col
         len_count += 1
     return perimeter
